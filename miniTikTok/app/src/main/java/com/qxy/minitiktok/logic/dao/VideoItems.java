@@ -9,5 +9,5 @@ import java.util.List;
  * @Date 2022/8/20 16:21
  */
 public class VideoItems {
-    private List<String> item_id;
+    private List<String>  itemId;
 }

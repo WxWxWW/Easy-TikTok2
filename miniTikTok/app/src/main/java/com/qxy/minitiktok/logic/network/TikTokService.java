@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -14,6 +16,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -72,11 +75,9 @@ public interface TikTokService {
 
     //获取用户公开信息,需要授权
     @FormUrlEncoded
-    @Headers("Content-Type: application/json")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
     @POST("/oauth/userinfo/")
-    Call<ResponseBody> getUserInfo(@Header("access-token") String accessToken,
-                                   @Field("access-token") String access_Token,
-                                   @Field("open_id") String openId);
+    Call<ResponseBody> getUserInfo(@Field("access_token")String accessToken,@Field("open_id") String openId);
 
     //获取粉丝列表
     //目前无效
@@ -123,12 +124,11 @@ public interface TikTokService {
 
     //查询特定视频的视频数据
     //目前无效
-    @FormUrlEncoded
     @Headers("Content-Type: application/json")
     @POST("/video/data/")
-    Call<ResponseBody> getVideoData(@Field("open_id") String openId,
+    Call<ResponseBody> getVideoData(@Query("open_id") String openId,
                                     @Header("access-token") String accessToken,
-                                    @Body @Field("item_ids") List<String> itemIds);
+                                    @Body RequestBody body);
 
 
     //获取榜单数据

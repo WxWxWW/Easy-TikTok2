@@ -20,8 +20,11 @@ import com.qxy.minitiktok.logic.network.RetrofitCreator;
 import com.qxy.minitiktok.logic.network.TikTokNetwork;
 import com.qxy.minitiktok.logic.network.TikTokService;
 import com.qxy.minitiktok.logic.vm.CallViewModel;
+import com.qxy.minitiktok.util.LogUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.SneakyThrows;
 import okhttp3.ResponseBody;
@@ -160,9 +163,11 @@ public class CallbackActivity extends BaseActivity<CallViewModel, ActivityCallba
                 }
             });
         });
-        //特定视频id的数据
+        //特定视频id的数据，你们需要授权将特定的视频的Item_id获取后在传入
         binding.btnVideoData.setOnClickListener((v) -> {
-            tikTokNetwork.getVideoData("@9VwNjqPAC8YybCSicNo6F8791GbqNf6AMpR4qg6kKFMRbfD060zdRmYqig357zEB9XxH4lNEORl4vRGHW9x/3Q==").enqueue(new Callback<ResponseBody>() {
+            List<String> ids = new ArrayList<>();
+            ids.add("@9VwNjqPAC8YybCSicNo6F8791GbqNf6AMpR4qg6kKFMRbfD060zdRmYqig357zEB9XxH4lNEORl4vRGHW9x/3Q==");
+            tikTokNetwork.getVideoData(ids).enqueue(new Callback<ResponseBody>() {
                 @SneakyThrows
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

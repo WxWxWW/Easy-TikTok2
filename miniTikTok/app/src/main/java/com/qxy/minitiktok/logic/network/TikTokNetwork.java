@@ -9,11 +9,17 @@ import com.qxy.minitiktok.util.LogUtil;
 import com.qxy.minitiktok.util.StringUtil;
 import com.qxy.minitiktok.util.ToastUtils;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import lombok.SneakyThrows;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -94,7 +100,7 @@ public class TikTokNetwork {
 
     //获取用户公开信息
     public Call<ResponseBody> getUserInfo(){
-        return tikTokService.getUserInfo(accessToken,accessToken,openId);
+        return tikTokService.getUserInfo(accessToken,openId);
     }
     //查看粉丝列表
     public Call<ResponseBody> getFansList(Integer count,Long cursor){
@@ -128,11 +134,12 @@ public class TikTokNetwork {
     public Call<ResponseBody> getFollowingList(Integer count){
         return getFollowingList(count,null);
     }
-    //查询特定id的视频
-    public Call<ResponseBody> getVideoData(String id){
-        List<String> ids = new ArrayList<>();
-        ids.add(id);
-        return tikTokService.getVideoData(openId,accessToken,ids);
+    //查询特定id数组的视频
+    public Call<ResponseBody> getVideoData(List<String> ids){
+        Map<String,List<String>> map = new HashMap<>();
+        map.put("item_ids",ids);
+        RequestBody body = RequestBody.create(MediaType.parse("Content-Type,application/json"),new JSONObject(map).toString());
+        return tikTokService.getVideoData(openId,accessToken,body);
     }
 
     //刷新refresh-token
@@ -183,8 +190,12 @@ public class TikTokNetwork {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         try {
-                            clientToken = StringUtil.getFieldValueFromJson(response.body().string(),
-                                    "client_token");
+                            String s = response.body().string();
+                            LogUtil.d(s);
+                            if(s != null) {
+                                clientToken = StringUtil.getFieldValueFromJson(s,
+                                        "access_token");
+                            }
                         } catch (IOException e) {
                             LogUtil.d("client_token: IO异常");
                             e.printStackTrace();
@@ -204,16 +215,15 @@ public class TikTokNetwork {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-                    LogUtil.d(response.body().string());
                     String s = response.body().string();
+                    LogUtil.d(s);
                     if(s != null) {
                         accessToken = StringUtil.getFieldValueFromJson(s,
                                 "access_token");
                         refreshToken = StringUtil.getFieldValueFromJson(s,
                                 "refresh_token");
                         openId = StringUtil.getFieldValueFromJson(s, "open_id");
-                    }
-                    else{
+                    } else{
 
                     }
                 }catch (IOException e){
