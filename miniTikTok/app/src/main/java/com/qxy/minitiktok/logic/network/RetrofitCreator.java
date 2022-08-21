@@ -21,8 +21,6 @@ public class RetrofitCreator {
     private static final Long IO_TIMEOUT = 20L;
 
 
-    public static final String openID = "_000x1h1XxYLVWBfbhPeCo4iTZUeBo16aFV2";
-
     private static Retrofit retrofit;
 
     static {

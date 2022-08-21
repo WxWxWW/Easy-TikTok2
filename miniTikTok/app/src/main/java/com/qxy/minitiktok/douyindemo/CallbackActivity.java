@@ -21,6 +21,7 @@ import com.qxy.minitiktok.logic.network.TikTokNetwork;
 import com.qxy.minitiktok.logic.network.TikTokService;
 import com.qxy.minitiktok.logic.vm.CallViewModel;
 import com.qxy.minitiktok.util.LogUtil;
+import com.qxy.minitiktok.util.SpUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -217,6 +218,9 @@ public class CallbackActivity extends BaseActivity<CallViewModel, ActivityCallba
                 Toast.makeText(this, "授权成功，获得权限：" + response.grantedPermissions,
                         Toast.LENGTH_LONG).show();
                 tikTokNetwork.getAccessToken(response.authCode);
+                Long time = System.currentTimeMillis() + 1296000000L;
+                SpUtil.put(this,"tokenFailureTime",time);
+                LogUtil.i(String.valueOf(time));
             }else{
                 Toast.makeText(this, "授权失败，权限：" + response.grantedPermissions,
                         Toast.LENGTH_LONG).show();

@@ -2,7 +2,12 @@ package com.qxy.minitiktok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserManager;
+
+import com.qxy.minitiktok.ui.activity.LoginActivity;
 
 
 /**
@@ -18,4 +23,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
 }

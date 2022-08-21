@@ -1,5 +1,7 @@
 package com.qxy.minitiktok.base;
 
+import android.app.Activity;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -9,7 +11,9 @@ import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.qxy.minitiktok.ActivityCollector;
 import com.qxy.minitiktok.BR;
+import com.qxy.minitiktok.TokenReceiver;
 
 /**
  * @Classname BaseActivity
@@ -26,6 +30,7 @@ public abstract class BaseActivity<VM extends ViewModel,VDB extends ViewDataBind
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollector.addActivity(this);
         binding = DataBindingUtil.setContentView(this,getLayoutId());
         model = new ViewModelProvider(this).get(getViewModelClass());
     }
@@ -33,4 +38,5 @@ public abstract class BaseActivity<VM extends ViewModel,VDB extends ViewDataBind
     protected abstract Integer getLayoutId();
 
     protected abstract Class<VM> getViewModelClass();
+
 }

@@ -7,17 +7,17 @@ package com.qxy.minitiktok.logic.dao;
  * @Date 2022/8/20 22:55
  */
 public class VideoStatistics {
-
+    //转发数
     private int forward_count;
-
+    //评论数
     private int comment_count;
-
+    //点赞数
     private int digg_count;
-
+    //下载数
     private int download_count;
-
+    //播放数，只有作者本人可见。公开视频设为私密后，播放数也会返回0。
     private int play_count;
-
+    //分享数
     private int share_count;
 
     public void setForward_count(int forward_count){
