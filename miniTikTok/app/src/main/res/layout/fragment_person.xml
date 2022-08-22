@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.qxy.minitiktok.ui.FlexibleLayout
+        android:id="@+id/person_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--总布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/background"
+                android:orientation="vertical"
+                android:weightSum="10">
+
+                <!--头部布局-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2.5"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/image_avatar"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="12dp"
+                        android:src="@mipmap/background"
+                        app:civ_border_color="@color/aliceblue"
+                        app:civ_border_width="2dp" />
+
+                    <TextView
+                        android:id="@+id/text_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/image_avatar"
+                        android:layout_toEndOf="@+id/image_avatar"
+                        android:text="name"
+                        android:textColor="@color/white"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_tiktok_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_name"
+                        android:layout_toEndOf="@+id/image_avatar"
+                        android:text="douyin_number"
+                        android:textSize="16dp" />
+
+                    <io.alterac.blurkit.BlurLayout
+                        android:id="@+id/text_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_tiktok_number"
+                        android:layout_toEndOf="@+id/image_avatar"
+                        android:padding="2dp"
+                        app:blk_blurRadius="20"
+                        app:blk_cornerRadius="10dp"
+                        app:blk_fps="1">
+
+                        <TextView
+                            android:id="@+id/text_sex_blur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="sex"
+                            android:textSize="16dp" />
+                    </io.alterac.blurkit.BlurLayout>
+
+                    <io.alterac.blurkit.BlurLayout
+                        android:id="@+id/text_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_tiktok_number"
+                        android:layout_toEndOf="@+id/text_sex"
+                        android:padding="2dp"
+                        app:blk_blurRadius="20"
+                        app:blk_cornerRadius="1dp"
+                        app:blk_fps="1">
+
+                        <TextView
+                            android:id="@+id/text_area_blur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="brief"
+                            android:textSize="16sp" />
+                    </io.alterac.blurkit.BlurLayout>
+
+
+                </RelativeLayout>
+                <!--尾部布局-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/linear_person_info"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:id="@+id/text_fans_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:padding="2dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_fans"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="1dp"
+                            android:layout_toEndOf="@+id/text_fans_number"
+                            android:text="@string/fans"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/text_following_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_toEndOf="@+id/text_fans"
+                            android:padding="2dp"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_following"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="1dp"
+                            android:layout_toEndOf="@+id/text_following_number"
+                            android:text="@string/following"
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/text_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="4"
+                        android:minLines="1"
+                        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxx"
+                        android:layout_marginStart="16dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:text="作品"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_video_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:text="@string/video_end"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.qxy.minitiktok.ui.FlexibleLayout>
+</layout>

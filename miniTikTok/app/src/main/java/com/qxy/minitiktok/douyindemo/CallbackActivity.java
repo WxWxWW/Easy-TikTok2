@@ -218,7 +218,7 @@ public class CallbackActivity extends BaseActivity<CallViewModel, ActivityCallba
                 Toast.makeText(this, "授权成功，获得权限：" + response.grantedPermissions,
                         Toast.LENGTH_LONG).show();
                 tikTokNetwork.getAccessToken(response.authCode);
-                Long time = System.currentTimeMillis() + 1296000000L;
+                Long time = System.currentTimeMillis() + 60000L;
                 SpUtil.put(this,"tokenFailureTime",time);
                 LogUtil.i(String.valueOf(time));
             }else{

@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">TikTok</string>
+    <string name="app_name">miniTikTok</string>
+    <string name="account">账号:</string>
+    <string name="account_hint">用户名或者邮箱</string>
+    <string name="password">密码:</string>
+    <string name="password_hint">账号密码</string>
+    <string name="login_or_register">登录/注册</string>
+    <string name="authorized_login">抖音授权登录</string>
+    <!-- Strings related to login -->
+    <string name="fans">粉丝</string>
+    <string name="following">关注</string>
+    <string name="video_works">作品</string>
+    <string name="video_end">暂时没有更多了</string>
+    <string name="mine">我的</string>
+    <string name="home">首页</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

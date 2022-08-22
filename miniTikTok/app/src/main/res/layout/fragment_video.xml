@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Movie"
+            type="com.qxy.minitiktok.logic.vm.ListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/video">
+        </VideoView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:paddingStart="8dp"
+                android:layout_gravity="bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6.5"
+                android:orientation="vertical">
+                <!--标题-->
+                <TextView
+                    android:id="@+id/text_title"
+                    android:text="111111"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--创建时间-->
+                <TextView
+                    android:id="@+id/text_create_time"
+                    android:text="2022"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--视频介绍信息-->
+                <TextView
+                    android:id="@+id/text_video_message"
+                    android:text="测试测试"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:lines="3"
+                    android:minLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <!--播放量-->
+                <TextView
+                    android:id="@+id/text_plays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginVertical="4dp"
+                    android:drawableStart="@drawable/ic_play"
+                    android:gravity="center"
+                    android:text="2022"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:layout_marginBottom="36dp"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_avatar"
+                    android:src="@mipmap/background"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"/>
+
+                <!--点赞-->
+                <TextView
+                    android:id="@+id/text_kudos"
+                    android:drawableTop="@drawable/ic_like"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"/>
+                <!--评论-->
+                <TextView
+                    android:id="@+id/text_comments"
+                    android:drawableTop="@drawable/ic_comment"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"/>
+                <!--下载-->
+                <TextView
+                    android:id="@+id/text_download"
+                    android:drawableTop="@drawable/ic_star"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"/>
+                <!--分享-->
+                <TextView
+                    android:id="@+id/text_share"
+                    android:drawableTop="@drawable/ic_share"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

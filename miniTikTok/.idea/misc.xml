@@ -8,7 +8,22 @@
         <entry key="..\:/Easy-TikTok/miniTikTok/app/src/main/res/layout/activity_demo.xml" value="0.1875" />
         <entry key="..\:/Easy-TikTok/miniTikTok/app/src/main/res/layout/activity_main.xml" value="0.16717325227963525" />
         <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/debug/res/layout/activity_view.xml" value="0.32653985507246375" />
-        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/activity_login.xml" value="0.3211050724637681" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/button_rounded_frame.xml" value="0.325" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/edit_rounded_frame.xml" value="0.325" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/ic_comment.xml" value="0.35435897435897434" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/ic_like.xml" value="0.35435897435897434" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/ic_play.xml" value="0.35435897435897434" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/layout_personInfo.xml" value="0.35435897435897434" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/drawable/text_background.xml" value="0.35435897435897434" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/activity_main.xml" value="0.30932971014492755" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/fragment_home.xml" value="0.1875" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/fragment_list.xml" value="0.33" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/fragment_login.xml" value="0.30932971014492755" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/fragment_person.xml" value="0.25" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/list_fragment.xml" value="0.30932971014492755" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/layout/login_fragment.xml" value="0.34375" />
+        <entry key="..\:/Easy-TikTok2/miniTikTok/app/src/main/res/menu/menu_home_page.xml" value="0.34375" />
         <entry key="..\:/TikTok/Module_common/src/main/res/layout/activity_main.xml" value="0.32608695652173914" />
         <entry key="..\:/TikTok/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3490740740740741" />
         <entry key="..\:/TikTok/app/src/main/res/layout/activity_callback.xml" value="0.16717325227963525" />
